@@ -20,107 +20,145 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "MediaConvert" :: String
-
 
 -- | Permanently remove a job from a queue. Once you have canceled a job, you can't start it again. You can't delete a running job.
 cancelJob :: forall eff. CancelJobRequest -> Aff (exception :: EXCEPTION | eff) CancelJobResponse
-cancelJob = Request.request serviceName "cancelJob" 
+cancelJob = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "cancelJob"
 
 
 -- | Create a new transcoding job. For information about jobs and job settings, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
 createJob :: forall eff. CreateJobRequest -> Aff (exception :: EXCEPTION | eff) CreateJobResponse
-createJob = Request.request serviceName "createJob" 
+createJob = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "createJob"
 
 
 -- | Create a new job template. For information about job templates see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
 createJobTemplate :: forall eff. CreateJobTemplateRequest -> Aff (exception :: EXCEPTION | eff) CreateJobTemplateResponse
-createJobTemplate = Request.request serviceName "createJobTemplate" 
+createJobTemplate = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "createJobTemplate"
 
 
 -- | Create a new preset. For information about job templates see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
 createPreset :: forall eff. CreatePresetRequest -> Aff (exception :: EXCEPTION | eff) CreatePresetResponse
-createPreset = Request.request serviceName "createPreset" 
+createPreset = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "createPreset"
 
 
 -- | Create a new transcoding queue. For information about job templates see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
 createQueue :: forall eff. CreateQueueRequest -> Aff (exception :: EXCEPTION | eff) CreateQueueResponse
-createQueue = Request.request serviceName "createQueue" 
+createQueue = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "createQueue"
 
 
 -- | Permanently delete a job template you have created.
 deleteJobTemplate :: forall eff. DeleteJobTemplateRequest -> Aff (exception :: EXCEPTION | eff) DeleteJobTemplateResponse
-deleteJobTemplate = Request.request serviceName "deleteJobTemplate" 
+deleteJobTemplate = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "deleteJobTemplate"
 
 
 -- | Permanently delete a preset you have created.
 deletePreset :: forall eff. DeletePresetRequest -> Aff (exception :: EXCEPTION | eff) DeletePresetResponse
-deletePreset = Request.request serviceName "deletePreset" 
+deletePreset = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "deletePreset"
 
 
 -- | Permanently delete a queue you have created.
 deleteQueue :: forall eff. DeleteQueueRequest -> Aff (exception :: EXCEPTION | eff) DeleteQueueResponse
-deleteQueue = Request.request serviceName "deleteQueue" 
+deleteQueue = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "deleteQueue"
 
 
 -- | Send an request with an empty body to the regional API endpoint to get your account API endpoint.
 describeEndpoints :: forall eff. DescribeEndpointsRequest -> Aff (exception :: EXCEPTION | eff) DescribeEndpointsResponse
-describeEndpoints = Request.request serviceName "describeEndpoints" 
+describeEndpoints = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "describeEndpoints"
 
 
 -- | Retrieve the JSON for a specific completed transcoding job.
 getJob :: forall eff. GetJobRequest -> Aff (exception :: EXCEPTION | eff) GetJobResponse
-getJob = Request.request serviceName "getJob" 
+getJob = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "getJob"
 
 
 -- | Retrieve the JSON for a specific job template.
 getJobTemplate :: forall eff. GetJobTemplateRequest -> Aff (exception :: EXCEPTION | eff) GetJobTemplateResponse
-getJobTemplate = Request.request serviceName "getJobTemplate" 
+getJobTemplate = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "getJobTemplate"
 
 
 -- | Retrieve the JSON for a specific preset.
 getPreset :: forall eff. GetPresetRequest -> Aff (exception :: EXCEPTION | eff) GetPresetResponse
-getPreset = Request.request serviceName "getPreset" 
+getPreset = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "getPreset"
 
 
 -- | Retrieve the JSON for a specific queue.
 getQueue :: forall eff. GetQueueRequest -> Aff (exception :: EXCEPTION | eff) GetQueueResponse
-getQueue = Request.request serviceName "getQueue" 
+getQueue = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "getQueue"
 
 
 -- | Retrieve a JSON array of up to twenty of your job templates. This will return the templates themselves, not just a list of them. To retrieve the next twenty templates, use the nextToken string returned with the array
 listJobTemplates :: forall eff. ListJobTemplatesRequest -> Aff (exception :: EXCEPTION | eff) ListJobTemplatesResponse
-listJobTemplates = Request.request serviceName "listJobTemplates" 
+listJobTemplates = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "listJobTemplates"
 
 
 -- | Retrieve a JSON array of up to twenty of your most recently created jobs. This array includes in-process, completed, and errored jobs. This will return the jobs themselves, not just a list of the jobs. To retrieve the twenty next most recent jobs, use the nextToken string returned with the array.
 listJobs :: forall eff. ListJobsRequest -> Aff (exception :: EXCEPTION | eff) ListJobsResponse
-listJobs = Request.request serviceName "listJobs" 
+listJobs = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "listJobs"
 
 
 -- | Retrieve a JSON array of up to twenty of your presets. This will return the presets themselves, not just a list of them. To retrieve the next twenty presets, use the nextToken string returned with the array.
 listPresets :: forall eff. ListPresetsRequest -> Aff (exception :: EXCEPTION | eff) ListPresetsResponse
-listPresets = Request.request serviceName "listPresets" 
+listPresets = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "listPresets"
 
 
 -- | Retrieve a JSON array of up to twenty of your queues. This will return the queues themselves, not just a list of them. To retrieve the next twenty queues, use the nextToken string returned with the array.
 listQueues :: forall eff. ListQueuesRequest -> Aff (exception :: EXCEPTION | eff) ListQueuesResponse
-listQueues = Request.request serviceName "listQueues" 
+listQueues = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "listQueues"
 
 
 -- | Modify one of your existing job templates.
 updateJobTemplate :: forall eff. UpdateJobTemplateRequest -> Aff (exception :: EXCEPTION | eff) UpdateJobTemplateResponse
-updateJobTemplate = Request.request serviceName "updateJobTemplate" 
+updateJobTemplate = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "updateJobTemplate"
 
 
 -- | Modify one of your existing presets.
 updatePreset :: forall eff. UpdatePresetRequest -> Aff (exception :: EXCEPTION | eff) UpdatePresetResponse
-updatePreset = Request.request serviceName "updatePreset" 
+updatePreset = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "updatePreset"
 
 
 -- | Modify one of your existing queues.
 updateQueue :: forall eff. UpdateQueueRequest -> Aff (exception :: EXCEPTION | eff) UpdateQueueResponse
-updateQueue = Request.request serviceName "updateQueue" 
+updateQueue = Request.request service method  where
+    service = Request.ServiceName "MediaConvert"
+    method = Request.MethodName "updateQueue"
 
 
 -- | Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
